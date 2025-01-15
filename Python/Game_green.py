@@ -55,10 +55,11 @@ corrida = True
 
 while corrida:
     for event in pygame.event.get():
-        if event.type == pygame.K_SPACE:
-                variavel.image.fill((random.randint(1, 255),random.randint(1, 255),random.randint(1, 255)))
         if event.type == pygame.QUIT:
             corrida = False
+        if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    variavel.image.fill((random.randint(0, 255), random.randint(0, 255),random.randint(0, 255)))
 
     
     valor.update()
