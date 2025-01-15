@@ -7,17 +7,16 @@ import pygame.display
 import random
 
 class Quadrado (pygame.sprite.Sprite):
-    def init(self):
-        super().init()
+    def __init__(self):
+        super().__init__()
         self.cor_quadrado = (250, 95, 95)
         self.largura = 50
         self.altura = 50
         self.gay_tamanho = 30
         self.homofobico = (self.largura / 2, self.altura / 2)
-        self.image = pygame.Surface(self.homofobico)
+        self.image = pygame.Surface(size = self.homofobico)
         self.image.fill(self.cor_quadrado)
-        self.rect =self.image.get_rect(center = (50, 50))
-        
+        self.rect = self.image.get_rect(center = (50, 50))
 
 pygame.init() 
 
