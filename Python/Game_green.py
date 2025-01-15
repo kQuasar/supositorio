@@ -18,6 +18,9 @@ class Quadrado (pygame.sprite.Sprite):
         self.image.fill(self.cor_quadrado)
         self.rect = self.image.get_rect(center = (50, 50))
 
+    def update(self):
+        pass
+
 pygame.init() 
 
 vermelho = (245, 0 , 35)
@@ -35,7 +38,7 @@ variavel = Quadrado()
 
 valor = pygame.sprite.Group()
 valor.add(variavel)
-
+time = pygame.time.Clock()
 corrida = True
 
 while corrida:
@@ -44,11 +47,13 @@ while corrida:
             corrida = False
 
     
-
+    valor.update()
     
     janela.fill(verde)
     valor.draw(janela)
 
-    pygame.display.flip()
 
+    pygame.display.update()
+
+    time.tick(60)
 pygame.quit()
