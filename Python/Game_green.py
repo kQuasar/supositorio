@@ -17,7 +17,7 @@ class Quadrado (pygame.sprite.Sprite):
         self.image = pygame.Surface(size = self.homofobico)
         self.image.fill(self.cor_quadrado)
         self.rect = self.image.get_rect(center = (425, 350))
-
+        
     def update(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
@@ -29,6 +29,12 @@ class Quadrado (pygame.sprite.Sprite):
         if keys[pygame.K_UP]:
             self.rect.y -= 2
 
+        for event in pygame.event.get():
+        
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    self.image.fill((random.randint(0, 255), random.randint(0, 255),random.randint(0, 255)))
+    
                 
 
         
@@ -60,6 +66,7 @@ while corrida:
         if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     variavel.image.fill((random.randint(0, 255), random.randint(0, 255),random.randint(0, 255)))
+                   
 
     
     valor.update()
